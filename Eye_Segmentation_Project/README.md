@@ -1,6 +1,7 @@
 The goald here is to implement a UNET model and train him on 178x218 pixels face images:
 
 Here is what the model looks like :
+
 ![image](https://github.com/Shifoue/Portfolio/assets/69169567/8eb8587b-0d9d-498c-9255-be0b518b7f7e)
 
 First we have to refine our Data and create masks. I chose to use mediapipe inside my **Eye_dataset_segmentation.py** script which help me create mesh for each faces that i use to approximate a mask for the eyes.
