@@ -14,4 +14,6 @@ Finally i emplement my UNET architecture, i refine the Data using basic Data Aug
 
 For the loss function of my model i choose to implement a dice score (IoU) which force my model to predict as close as possible to the mask instead of opting for an all black or white strategy that would give him a good accuracy but would be pretty bad for what we want.
 
-As a validation metrics i use IoU and it works fine.
+As a validation metrics i use IoU and it works fine :
+
+![image](https://github.com/Shifoue/Portfolio/assets/69169567/67614430-a71b-46a7-b3ad-2127fe637bfc)
