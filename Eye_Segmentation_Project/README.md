@@ -12,7 +12,7 @@ Once the masks are created i split my data in two parts :
 
 Finally i emplement my UNET architecture, refine the Data using basic data augmentation and train the model.
 
-For the loss function of my model i choose to implement a dice score (IoU) which forces my model to predict as close as possible to the mask instead of going for an all black or white strategy that would give him a good accuracy but would be pretty bad for what we want.
+For the loss function of my model i choose to implement a dice score (IoU) which forces my model to predict as close as possible to the masks instead of going for an all black or white strategy that would give him a good accuracy but would be pretty bad for what we want.
 
 As validation metric i use the IoU and it works fine :
 
