@@ -1,5 +1,3 @@
-$('#readme').insertBefore('.file-navigation');
-
 The goal here is to implement a UNET model and train him on 178x218 pixels face images
 
 Here is what the model looks like :
