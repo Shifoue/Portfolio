@@ -1,6 +1,6 @@
 # Portfolio
 
-This contain :
+This repository contain :
   - ## **Graph script** :
 
   ![image](https://github.com/Shifoue/Portfolio/assets/69169567/12202d72-b7fc-4814-94ba-b449999e5215)
