@@ -1,7 +1,7 @@
 # Portfolio
 
 This repository contain :
-  - ## **Graph script** :
+  - ## **[Graph script](https://github.com/Shifoue/Portfolio/tree/main/Graph)** :
 
   ![image](https://github.com/Shifoue/Portfolio/assets/69169567/12202d72-b7fc-4814-94ba-b449999e5215)
 
