@@ -1,3 +1,5 @@
+# Eye Segmentation Project
+
 The goal here is to implement a UNET model and train it on 178x218 pixels face images
 
 Here is what the model looks like :
