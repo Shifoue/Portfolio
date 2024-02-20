@@ -11,13 +11,17 @@ seed = 42
 
 def get_transforms(size=640):
     train_transforms = torch.nn.Sequential(
+        transforms.ToTensor(),
         transforms.Resize(size),
         transforms.Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225)),
+        transforms.Grayscale(),
     )
 
     test_transforms = torch.nn.Sequential(
+        transforms.ToTensor(),
         transforms.Resize(size),
         transforms.Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225)),
+        transforms.Grayscale(),
     )
 
     return train_transforms, test_transforms
@@ -30,7 +34,7 @@ def data_from_path(dataset_path):
     for label in child_directories:
         path = os.join(dataset_path, label)
 
-        images.append(os.join(path, f) for f in os.listdir(path) if os.isfile(os.join(path, f)))
+        images.append(os.join(path, f[:-1]) for f in os.listdir(path) if os.isfile(os.join(path, f)))
         labels.append(label)
 
     return images, labels
