@@ -8,6 +8,8 @@ import json
 
 import pandas as pd
 
+from COCO_dataset import COCODataset
+
 seed = 42
 
 def get_transforms(size=640):
@@ -24,6 +26,8 @@ def get_transforms(size=640):
         transforms.Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225)),
         transforms.Grayscale(),
     )
+
+
 
 def process_data(path_to_images, path_to_data_json):
     f_data = open(path_to_data_json)
@@ -43,3 +47,6 @@ def process_data(path_to_images, path_to_data_json):
     processed_data = list(processed_df[["file_name", "caption"]].itertuples(index=False, name=None))
 
     return [(os.path.join(path_to_images, x), y) for x,y in processed_data]
+
+def create_dataloader(path_to_images, path_to_data_json):
+    #TODO
