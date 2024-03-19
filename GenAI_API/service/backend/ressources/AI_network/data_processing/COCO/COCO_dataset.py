@@ -1,7 +1,7 @@
 import random
 from PIL import Image
 
-seed = 42
+random.seed(42)
 
 class COCODataset():
     def __init__(self, data, transforms, target_transform=None):
@@ -17,8 +17,9 @@ class COCODataset():
         img_path, annotation = self.data[idx]
         image = Image.open(img_path)
 
-        if self.transform:
-            image = self.transform(image)
+        if self.transforms:
+            image = self.transforms(image)
         if self.target_transform:
             annotation = self.target_transform(annotation)
+            
         return image, annotation

@@ -24,8 +24,8 @@ class CatDogDataset():
         img_path, label = self.data[idx]
         image = Image.open(img_path)
 
-        if self.transform:
-            image = self.transform(image)
+        if self.transforms:
+            image = self.transforms(image)
         if self.target_transform:
             label = self.target_transform(label)
         return image, label

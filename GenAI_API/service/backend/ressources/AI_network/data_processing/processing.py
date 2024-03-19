@@ -10,19 +10,19 @@ from dataset import CatDogDataset
 seed = 42
 
 def get_transforms(size=640):
-    train_transforms = torch.nn.Sequential(
+    train_transforms = transforms.Compose([
         transforms.ToTensor(),
         transforms.Resize(size),
         transforms.Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225)),
         transforms.Grayscale(),
-    )
+    ])
 
-    test_transforms = torch.nn.Sequential(
+    test_transforms = transforms.Compose([
         transforms.ToTensor(),
         transforms.Resize(size),
         transforms.Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225)),
         transforms.Grayscale(),
-    )
+    ])
 
     return train_transforms, test_transforms
 
