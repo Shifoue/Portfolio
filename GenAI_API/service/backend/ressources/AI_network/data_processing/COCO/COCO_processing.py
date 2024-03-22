@@ -5,12 +5,13 @@ from torch.utils.data import DataLoader
 from torchvision import transforms
 from sklearn.model_selection import train_test_split
 import json
+import random
 
 import pandas as pd
 
 from COCO_dataset import COCODataset
 
-seed = 42
+random.seed(42)
 
 def get_transforms(size=640):
     train_transforms = transforms.Compose([

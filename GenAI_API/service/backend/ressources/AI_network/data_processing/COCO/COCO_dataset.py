@@ -1,7 +1,7 @@
-import random
+#import random
 from PIL import Image
 
-random.seed(42)
+#random.seed(42)
 
 class COCODataset():
     def __init__(self, data, transforms, target_transform=None):
@@ -9,7 +9,7 @@ class COCODataset():
         self.transforms = transforms
         self.target_transform = target_transform
 
-        random.shuffle(self.data)
+        #random.shuffle(self.data)
     def __len__(self):
         return len(self.data)
 
