@@ -11,16 +11,12 @@ class PositionEmbeddingFixedWeights(nn.Module):
         self.word_embedding_layer = nn.Embedding(
             num_embeddings=vocab_size, embedding_dim=output_dim,
             _weight=word_embedding_matrix,
-            #trainable=False
         )
-        #self.word_embedding_layer.weight = word_embedding_matrix
 
         self.position_embedding_layer = nn.Embedding(
             num_embeddings=sequence_length, embedding_dim=output_dim,
             _weight=position_embedding_matrix,
-            #trainable=False
         )
-        #self.position_embedding_layer.weight = position_embedding_matrix
              
     def get_position_encoding(self, seq_len, d, n=10000):
         P = np.zeros((seq_len, d))
@@ -34,7 +30,7 @@ class PositionEmbeddingFixedWeights(nn.Module):
  
  
     def forward(self, inputs):        
-        position_indices = torch.tensor(range(inputs.shape[-1])) #tf.range(tf.shape(inputs)[-1])
+        position_indices = torch.tensor(range(inputs.shape[-1]))
         embedded_words = self.word_embedding_layer(inputs)
         embedded_indices = self.position_embedding_layer(position_indices)
 
@@ -75,7 +71,7 @@ class DotProductAttention(nn.Module):
         values = values.to(float)
 
         # Scoring the queries against the keys after transposing the latter, and scaling
-        scores = torch.matmul(queries, keys.transpose(2, 3)) / torch.sqrt(torch.tensor(key_dim, dtype=torch.float32)) #queries.matmul(keys.T) / torch.sqrt(key_dim).to(torch.float)
+        scores = torch.matmul(queries, keys.transpose(2, 3)) / torch.sqrt(torch.tensor(key_dim, dtype=torch.float32))
  
         # Apply mask to the attention scores
         if mask is not None:
@@ -103,13 +99,12 @@ class MultiHeadAttention(nn.Module):
     def reshape_tensor(self, x, heads, flag):
         if flag:
             # Tensor shape after reshaping and transposing: (batch_size, heads, seq_length, -1)
-            x = torch.reshape(x, shape=(x.shape[0], x.shape[1], heads, -1)) #x.view(x.shape[0], x.shape[1], heads, -1)
+            x = torch.reshape(x, shape=(x.shape[0], x.shape[1], heads, -1))
             x = x.permute(0, 2, 1, 3)
         else:
             # Reverting the reshaping and transposing operations: (batch_size, seq_length, key_dim)
             x = x.permute(0, 2, 1, 3)
-            #x = torch.reshape(x, shape=(x.shape[0], x.shape[1], self.key_dim))
-            x = torch.reshape(x, shape=(x.shape[0], x.shape[1], self.key_dim)) #x.view(x.shape[0], x.shape[1], self.key_dim)
+            x = torch.reshape(x, shape=(x.shape[0], x.shape[1], self.key_dim))
 
         return x.to(torch.float)
  
@@ -184,8 +179,6 @@ class Encoder(nn.Module):
  
         # Add in a dropout layer
         x = self.dropout(pos_encoding_output)
- 
-        #print(x.shape)
 
         # Pass on the positional encoded values to each encoder layer
         for i, layer in enumerate(self.encoder_layer):
