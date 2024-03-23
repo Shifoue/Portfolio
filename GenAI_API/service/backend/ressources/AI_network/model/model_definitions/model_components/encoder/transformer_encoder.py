@@ -181,7 +181,7 @@ class Encoder(nn.Module):
         x = self.dropout(pos_encoding_output)
 
         # Pass on the positional encoded values to each encoder layer
-        for i, layer in enumerate(self.encoder_layer):
+        for layer in self.encoder_layer:
             x = layer(x, padding_mask)
  
         return x
