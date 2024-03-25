@@ -91,6 +91,7 @@ class MultiHeadAttention(nn.Module):
         self.key_dim = key_dim  # Dimensionality of the linearly projected queries and keys
         self.values_dim = value_dim  # Dimensionality of the linearly projected values
         self.output_dim = output_dim  # Dimensionality of the model
+        
         self.W_q = nn.Linear(input_dim, key_dim)  # Learned projection matrix for the queries
         self.W_k = nn.Linear(input_dim, key_dim)  # Learned projection matrix for the keys
         self.W_v = nn.Linear(input_dim, value_dim)  # Learned projection matrix for the values

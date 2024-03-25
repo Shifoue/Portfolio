@@ -30,6 +30,13 @@ def get_transforms(size=640):
 
     return train_transforms, test_transforms
 
+def create_vocab(sentences):
+    sentences_split = [re.split('(\W)', sentence) for sentence in sentences]
+    voc_list = [word for sentence in sentences_split for word in sentence]
+    voc_array = np.unique(np.array(voc_list))
+    word_to_ix = {word: i for i, word in enumerate(voc_array)}
+
+    return word_to_ix
 
 def process_data(path_to_images, path_to_json_data):
     f_data = open(path_to_json_data)
@@ -46,9 +53,11 @@ def process_data(path_to_images, path_to_json_data):
     #Merge dataset on common ID to get image name (JOIN like operation)
     processed_df = pd.merge(new_df, df_annotations, on='image_id', how='outer')
 
+    word_to_ix = create_vocab(processed_df["caption"])
+
     processed_data = list(processed_df[["file_name", "caption"]].itertuples(index=False, name=None))
 
-    return [(os.path.join(path_to_images, x), y) for x,y in processed_data]
+    return [(os.path.join(path_to_images, x), y) for x,y in processed_data], word_to_ix
 
 
 def create_dataloader(train_informations, test_informations):
@@ -63,7 +72,7 @@ def create_dataloader(train_informations, test_informations):
         test_dataloader : Loader for test images and annotations
     """
 
-    train_set = process_data(train_informations[0], train_informations[1]) # tuple(path_to_image, annotation)
+    train_set, word_to_ix = process_data(train_informations[0], train_informations[1]) # tuple(path_to_image, annotation)
     X_train, X_validation, y_train, y_valiation = train_test_split([x[0] for x in train_set], [x[1] for x in train_set], test_size=0.33, random_state=42)
 
 
@@ -81,4 +90,4 @@ def create_dataloader(train_informations, test_informations):
     validation_dataloader = DataLoader(validation_dataset, batch_size=64, shuffle=True)
     test_dataloader = DataLoader(test_dataset, batch_size=64, shuffle=True)
 
-    return train_dataloader, validation_dataloader, test_dataloader
+    return train_dataloader, validation_dataloader, test_dataloader, word_to_ix
