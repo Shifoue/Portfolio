@@ -144,9 +144,9 @@ class EncoderLayer(nn.Module):
         self.dropout2 = nn.Dropout(dropout)
         self.add_norm2 = AddNormalization(layer_output_dim)
 
-    def forward(self, x, training):
+    def forward(self, x, padding_mask=None):
         # Multi-head attention layer
-        multihead_output = self.multihead_attention(x, x, x)
+        multihead_output = self.multihead_attention(x, x, x, padding_mask)
         # Expected output shape = (batch_size, sequence_length, d_model)
  
         # Add in a dropout layer
@@ -173,7 +173,7 @@ class Encoder(nn.Module):
         self.dropout = nn.Dropout(dropout)
         self.encoder_layer = [EncoderLayer(num_head, key_dim, value_dim, inner_fc_dim, output_dim, dropout) for _ in range(num_layers)]
  
-    def forward(self, input_sentence, padding_mask, training):
+    def forward(self, input_sentence, padding_mask=None):
         # Generate the positional encoding
         pos_encoding_output = self.pos_encoding(input_sentence)
         # Expected output shape = (batch_size, sequence_length, d_model)
