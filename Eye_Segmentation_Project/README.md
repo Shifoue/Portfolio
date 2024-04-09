@@ -15,9 +15,9 @@ First we have to refine our Data and create masks. I chose to use mediapipe insi
      <td>Mask approximation created using mesh and approximated eye position</td>
   </tr>
   <tr>
-    <td><img src="head1_nomask.PNG" width=270 height=480/></td>
-  <td><img src="head1_nomask_mediapipe.PNG" width=270 height=480/></td>
-  <td><img src="Head1_mask.PNG" width=270 height=480/></td>
+    <td><img src="head1_nomask.PNG" width=178 height=218/></td>
+  <td><img src="head1_nomask_mediapipe.PNG" width=178 height=218/></td>
+  <td><img src="Head1_mask.PNG" width=178 height=218/></td>
   </tr>
 </table>
 
