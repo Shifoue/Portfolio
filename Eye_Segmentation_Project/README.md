@@ -16,8 +16,8 @@ First we have to refine our Data and create masks. I chose to use mediapipe insi
   </tr>
   <tr>
     <td><img src="head1_nomask.PNG" width=178 height=218/></td>
-  <td><img src="head1_nomask_mediapipe.PNG" width=178 height=218/></td>
-  <td><img src="Head1_mask.PNG" width=178 height=218/></td>
+    <td><img src="head1_nomask_mediapipe.PNG" width=178 height=218/></td>
+    <td><img src="Head1_mask.PNG" width=178 height=218/></td>
   </tr>
 </table>
 
