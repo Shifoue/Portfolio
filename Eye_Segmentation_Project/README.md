@@ -10,9 +10,9 @@ First we have to refine our Data and create masks. I chose to use mediapipe insi
 
 <table>
   <tr>
-    <td>Base image before creating mesh</td>
-     <td>Image with mesh allowing the approximation of eyes position</td>
-     <td>Mask approximation created using mesh and approximated eye position</td>
+    <td>Image before creating mesh</td>
+     <td>Image with eyes position approximated based on mesh</td>
+     <td>Mask generated based on eyes position approximation</td>
   </tr>
   <tr>
     <td><img src="head1_nomask.PNG" width=178 height=218/></td>
