@@ -8,7 +8,9 @@ Here is what the model looks like :
 
 First we have to refine our Data and create masks. I chose to use mediapipe inside my **[Eye_dataset_segmentation.py](https://github.com/Shifoue/Portfolio/blob/main/Eye_Segmentation_Project/Eye_dataset_segmentation.py)** script which help me create mesh for each faces that i use to approximate a mask for the eyes.
 
-![image](head1_nomask.PNG) ![image](head1_nomask_mediapipe.PNG)
+![image](head1_nomask.PNG) Base image before creating mesh
+![image](head1_nomask_mediapipe.PNG) Image with mesh allowing the detection of eyes position
+![image](head1_mask.PNG) Approximativ mask created using mesh and approximated eye position
 
 Once the masks were created i splitted my data in two parts :
   - Training data and masks
