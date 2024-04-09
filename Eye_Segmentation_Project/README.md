@@ -12,14 +12,14 @@ First we have to refine our Data and create masks. I chose to use mediapipe insi
     <img src="head1_nomask.PNG" alt="..."/>
     <figcaption>Base image before creating mesh</figcaption>
 </figure>
-
-Image with mesh allowing the approximation of eyes position :
-
-![image](head1_nomask_mediapipe.PNG)
-
-Mask approximation created using mesh and approximated eye position :
-
-![image](Head1_mask.PNG)
+<figure>
+    <img src="head1_nomask_mediapipe.PNG" alt="..."/>
+    <figcaption>Image with mesh allowing the approximation of eyes position</figcaption>
+</figure>
+<figure>
+    <img src="Head1_mask.PNG" alt="..."/>
+    <figcaption>Mask approximation created using mesh and approximated eye position</figcaption>
+</figure>
 
 Once the masks were created i splitted my data in two parts :
   - Training data and masks
