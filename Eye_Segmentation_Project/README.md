@@ -10,7 +10,9 @@ First we have to refine our Data and create masks. I chose to use mediapipe insi
 
 Base image before creating mesh :
 
-![Base image before creating mesh](head1_nomask.PNG "Base image before creating mesh")
+<figure>
+    <img src="head1_nomask.PNG" alt=".." title="Base image before creating mesh" />
+</figure>
 
 Image with mesh allowing the approximation of eyes position :
 
