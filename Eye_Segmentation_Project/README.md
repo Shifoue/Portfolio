@@ -10,7 +10,7 @@ First we have to refine our Data and create masks. I chose to use mediapipe insi
 
 ![image](head1_nomask.PNG) Base image before creating mesh
 ![image](head1_nomask_mediapipe.PNG) Image with mesh allowing the detection of eyes position
-![image](head1_mask.PNG) Approximativ mask created using mesh and approximated eye position
+![image](head1_mask.PNG) Mask approximation created using mesh and approximated eye position
 
 Once the masks were created i splitted my data in two parts :
   - Training data and masks
