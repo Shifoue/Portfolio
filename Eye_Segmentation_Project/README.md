@@ -31,4 +31,4 @@ For the loss function of my model i chose to implement a dice score (IoU) which 
 
 As validation metric i used the IoU and it works fine :
 
-![image](https://github.com/Shifoue/Portfolio/assets/69169567/67614430-a71b-46a7-b3ad-2127fe637bfc)
+![image](eyes_segmentation_result.PNG)
