@@ -2,7 +2,7 @@
 
 The goal here is to implement a UNET model and train it on 178x218 pixels face images
 
-Here is what the model looks like :
+Here is the UNET model architecture :
 
 ![image](https://github.com/Shifoue/Portfolio/assets/69169567/8eb8587b-0d9d-498c-9255-be0b518b7f7e)
 
