@@ -15,9 +15,9 @@ First we have to refine our Data and create masks. I chose to use mediapipe insi
     <td width="33%">Mask generated based on eyes position approximation</td>
   </tr>
   <tr>
-    <td><img src="head1_nomask.PNG" width=178 height=218/></td>
-    <td><img src="head1_nomask_mediapipe.PNG" width=178 height=218/></td>
-    <td><img src="Head1_mask.PNG" width=178 height=218/></td>
+    <td><img src="documentation/head1_nomask.PNG" width=178 height=218/></td>
+    <td><img src="documentation/head1_nomask_mediapipe.PNG" width=178 height=218/></td>
+    <td><img src="documentation/Head1_mask.PNG" width=178 height=218/></td>
   </tr>
 </table>
 
@@ -31,4 +31,4 @@ For the loss function of my model i chose to implement a dice score (IoU) which 
 
 As validation metric i used the IoU and it works fine :
 
-![image](eyes_segmentation_result.PNG)
+![image](documentation/eyes_segmentation_result.PNG)
