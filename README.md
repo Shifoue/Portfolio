@@ -11,4 +11,4 @@ This repository contain :
     
       Giving the Following results :
 
-      ![image](https://github.com/Shifoue/Portfolio/assets/69169567/67614430-a71b-46a7-b3ad-2127fe637bfc)
+      ![image](https://github.com/Shifoue/Portfolio/blob/main/Eye_Segmentation_Project/documentation/eyes_segmentation_result.PNG)
