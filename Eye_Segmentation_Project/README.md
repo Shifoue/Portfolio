@@ -29,6 +29,19 @@ Finally i emplemented my UNET architecture, refined the Data using basic data au
 
 For the loss function of my model i chose to implement a dice score (IoU) which forces my model to predict as close as possible to the masks instead of going for an all black or white strategy that would give him a good accuracy but would be pretty bad for what we want.
 
-As validation metric i used the IoU and it works fine :
+As validation metric i used the Dice Score and it works fine :
 
 ![image](documentation/eyes_segmentation_result.PNG)
+
+Following is a quick study of the optimizer :
+
+<table width="100%">
+  <tr>
+    <td width="50%">Impact of ADAMW optimizer with LR=1e-4</td>
+    <td width="50%">Impact of SGD optimizer with LR=1e-2</td>
+  </tr>
+  <tr>
+    <td><img src="documentation/Loss_evolution_ADAMW_LR=0.0001.PNG" width=500 height=500/></td>
+    <td><img src="documentation/Loss_evolution_SGD_LR=0.01.PNG" width=178 height=218/></td>
+  </tr>
+</table>
