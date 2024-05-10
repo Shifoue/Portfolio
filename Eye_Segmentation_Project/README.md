@@ -42,6 +42,8 @@ I conducted a quick study of the ADAMW and SGD optimizer and chose to use ADAMW 
   </tr>
 </table>
 
-As validation metric i used the Dice Score and it works fine, following is a comparison between real mask and predicted masks :
+Both optimizers seem to converge around the 20th epochs, but ADAMW has a better generalization compared to SGD based on observation of the results.
+
+I used the Dice Score as a validation metric and it works fine, following is a comparison between real mask and predicted masks :
 
 ![image](documentation/eyes_segmentation_result.PNG)
