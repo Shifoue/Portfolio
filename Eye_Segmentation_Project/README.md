@@ -41,7 +41,7 @@ Following is a quick study of the optimizer :
     <td width="50%">Impact of SGD optimizer with LR=1e-2</td>
   </tr>
   <tr>
-    <td><img src="documentation/Loss_evolution_ADAMW_LR=0.0001.PNG" width=500 height=500/></td>
-    <td><img src="documentation/Loss_evolution_SGD_LR=0.01.PNG" width=178 height=218/></td>
+    <td><img src="documentation/Loss_evolution_ADAMW_LR=0.0001.PNG" width=500 height=300/></td>
+    <td><img src="documentation/Loss_evolution_SGD_LR=0.01.PNG" width=500 height=300/></td>
   </tr>
 </table>
