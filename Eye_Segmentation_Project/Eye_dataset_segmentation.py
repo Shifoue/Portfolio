@@ -58,6 +58,10 @@ mask_path_validation = 'Dataset_Faces_Mask_validation'
 if not os.path.exists(mask_path_validation):
     os.makedirs(mask_path_validation)
 
+mask_path_test = 'Dataset_Faces_Mask_test' 
+if not os.path.exists(mask_path_test):
+    os.makedirs(mask_path_test)
+
 segmentation_path = 'Dataset_Faces_Segmented' 
 if not os.path.exists(segmentation_path):
     os.makedirs(segmentation_path)
@@ -69,6 +73,10 @@ if not os.path.exists(segmentation_path_training):
 segmentation_path_validation = 'Dataset_Faces_validation' 
 if not os.path.exists(segmentation_path_validation):
     os.makedirs(segmentation_path_validation)
+
+segmentation_path_test = 'Dataset_Faces_test' 
+if not os.path.exists(segmentation_path_test):
+    os.makedirs(segmentation_path_test)
 
 c = 1
 
@@ -82,9 +90,13 @@ for image in images:
         cv.imwrite(mask_path_training + "/"+ str(c)+ ".jpg", segmentation[0])
         #cv.imwrite(segmentation_path_training + "/"+ str(c)+ ".jpg", segmentation[1])
         cv.imwrite(segmentation_path_training + "/"+ str(c)+ ".jpg", image)
-    else:
+    elif c > 800 and c <= 1000:
         cv.imwrite(mask_path_validation + "/"+ str(c)+ ".jpg", segmentation[0])
         #cv.imwrite(segmentation_path_validation + "/"+ str(c)+ ".jpg", segmentation[1])
         cv.imwrite(segmentation_path_validation + "/"+ str(c)+ ".jpg", image)
+    else:
+        cv.imwrite(mask_path_test + "/"+ str(c)+ ".jpg", segmentation[0])
+        #cv.imwrite(segmentation_path_validation + "/"+ str(c)+ ".jpg", segmentation[1])
+        cv.imwrite(segmentation_path_test + "/"+ str(c)+ ".jpg", image)
 
     c += 1
